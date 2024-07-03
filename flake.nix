@@ -34,25 +34,23 @@
           modules = [
             {
               dotenv.enable = true;
-              packages = [];
-              processes.hello.exec = "hello";
+              packages = with pkgs; [alejandra];
 
               languages.javascript = {
                 enable = true;
                 yarn.enable = true;
-              }
+              };
 
               scripts = {
-                setup = ''
-                  yarn i
+                setup.exec = ''
+                  yarn
                 '';
-                clean = ''
+                clean.exec = ''
                   rm -rf node_modules 2> /dev/null
                   rm -rf dist 2> /dev/null
                   setup
                 '';
                 dev.exec = ''
-                  clean
                   yarn run dev
                 '';
                 build.exec = ''
@@ -61,7 +59,7 @@
                 '';
                 deploy.exec = ''
                   clean
-                 yarn run deploy
+                  yarn run deploy
                 '';
               };
             }

@@ -1,0 +1,43 @@
+---
+import { SEO } from "astro-seo";
+
+interface Props {
+  title: string;
+  description?: string;
+  OpenGraphImg?: string;
+}
+
+const { title, description, OpenGraphImg } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <SEO
+      charset="utf-8"
+      title={title}
+      description={description ?? "No description made yet"}
+      extend={{
+        link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+        meta: [
+          { name: "viewport", content: "width=device-width" },
+          { name: "generator", content: Astro.generator },
+        ],
+      }}
+    />
+  </head>
+  {
+    (
+      /* Add Header Here */
+      <body>
+        <slot />
+      </body>
+      /* Add Footer Here */
+    )
+  }
+</html>
+
+<style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</style>

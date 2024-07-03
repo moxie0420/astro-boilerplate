@@ -61,6 +61,14 @@
                   clean
                   yarn run deploy
                 '';
+                preview.exec = ''
+                  build
+                  yarn run preview
+                '';
+                update.exec = ''
+                  nix flake update
+                  yarn upgrade
+                '';
               };
             }
           ];

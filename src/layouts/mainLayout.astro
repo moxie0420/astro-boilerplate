@@ -4,7 +4,10 @@ import { SEO } from "astro-seo";
 interface Props {
   title: string;
   description?: string;
-  OpenGraphImg?: string;
+  OpenGraphImg?: {
+    url: string;
+    alt: string;
+  };
 }
 
 const { title, description, OpenGraphImg } = Astro.props;

@@ -10,6 +10,12 @@ interface Props {
 const { title, description, OpenGraphImg } = Astro.props;
 ---
 
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>
+
 <html lang="en">
   <head>
     <SEO
@@ -25,19 +31,7 @@ const { title, description, OpenGraphImg } = Astro.props;
       }}
     />
   </head>
-  {
-    (
-      /* Add Header Here */
-      <body>
-        <slot />
-      </body>
-      /* Add Footer Here */
-    )
-  }
+  <body>
+    <slot />
+  </body>
 </html>
-
-<style>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-</style>

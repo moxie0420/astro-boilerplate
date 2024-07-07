@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/cloudflare": "^11.0.1",
     "@astrojs/tailwind": "^5.1.0",
+    "@million/lint": "^1.0.0-rc.76",
     "@playform/compress": "^0.0.13",
     "@playform/inline": "^0.0.7",
     "astro": "^4.11.3",
